@@ -1,0 +1,12 @@
+services:
+  v2node:
+    build: .
+    container_name: ghcr.io/wyx2685/v2node
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      V2NODE_API_HOST: "https://your-panel.example.com"
+      V2NODE_NODE_ID: "1"
+      V2NODE_API_KEY: "your_api_key_here"
+    volumes:
+      - /etc/v2node:/etc/v2node
